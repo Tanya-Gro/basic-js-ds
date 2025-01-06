@@ -77,8 +77,12 @@ class BinarySearchTree {
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if(!this.head) return null;
+    const findMaximum = function(node) {
+      if(!node.right) return node.data;
+      return findMaximum(node.right);
+    }
+    return findMaximum(this.head);
   }
 }
 
