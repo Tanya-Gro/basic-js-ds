@@ -68,8 +68,12 @@ class BinarySearchTree {
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if(!this.head) return null;
+    const findMinimum = function(node) {
+      if(!node.left) return node.data;
+      return findMinimum(node.left);
+    }
+    return findMinimum(this.head);
   }
 
   max() {
